@@ -7,7 +7,14 @@ CORS(app)
 
 # 모델 부분
 def makeAnswer(question) :
-    return '(' + question + ") 이라는 질문을 주셨습니다. 저의 답변은 다음과 같습니다."
+    if "흡연" in question :
+        return '흡연에 대한 답변'
+    if "연령" in question :
+        return '중단에 대한 답변'
+    if "토" in question :
+        return '토에 대한 답변'
+    else : 
+        return question + '에 대한 답변. 학습되지 않음.'
 
 @app.route('/')
 def default() :
